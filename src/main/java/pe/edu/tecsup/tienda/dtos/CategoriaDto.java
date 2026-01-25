@@ -2,6 +2,7 @@ package pe.edu.tecsup.tienda.dtos;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -13,4 +14,7 @@ public class CategoriaDto {
     private String nombre;
     private Integer orden;
     private List<ProductoDto>  productos;
+
+
+
 }

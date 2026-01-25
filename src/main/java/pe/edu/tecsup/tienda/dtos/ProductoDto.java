@@ -23,4 +23,5 @@ public class ProductoDto {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date creado;
 
+
 }
