@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CpeJavaMod03S03SbTiendaApplication {
+public class SpringBootTiendaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CpeJavaMod03S03SbTiendaApplication.class, args);
+		SpringApplication.run(SpringBootTiendaApplication.class, args);
 	}
 
 }
