@@ -1,4 +1,4 @@
-package pe.edu.tecsup.cpe_java_mod03_s03_sb_tienda;
+package pe.edu.tecsup.tienda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
