@@ -103,4 +103,18 @@ public class ProductoController {
         return "redirect:/productos";
     }
 
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id, RedirectAttributes
+            redirectAttrs) throws Exception {
+
+        log.info("edit delete(id: " + id + ")");
+
+        this.productoService.deleteById(id);
+
+        redirectAttrs.addFlashAttribute("message", "Registro eliminado correctamente");
+
+        return "redirect:/productos";
+    }
+
 }
