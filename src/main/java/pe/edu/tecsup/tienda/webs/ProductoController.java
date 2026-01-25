@@ -58,7 +58,13 @@ public class ProductoController {
 
         model.addAttribute("categorias", categorias);
 
-        model.addAttribute("producto", ProductoDto.builder().build());
+        CategoriaDto newCategoriaDto = CategoriaDto.builder().build();
+        ProductoDto newProductoDto = ProductoDto.builder().build();
+        newProductoDto.setCategoria(newCategoriaDto);
+
+        log.info(newProductoDto.toString());
+
+        model.addAttribute("producto", newProductoDto);
 
         return "productos/create";
     }

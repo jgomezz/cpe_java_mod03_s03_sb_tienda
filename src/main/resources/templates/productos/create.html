@@ -28,11 +28,11 @@
                 </div>
             </div>
             <div class="card-body">
+
                 <div class="form-group">
                     <label for="id_categoria">Categor&iacute;a</label>
                     <select id="id_categoria" name="categoria"
-
-                            th:field="*{categoria}" class="form-control" required="required">
+                            th:field="*{categoria.id}" class="form-control" required="required">
                         <option th:each="categoria : ${categorias}"
                                 value="" th:value="${categoria.id}"
                                 th:text="${categoria.nombre}">Catería</option>
