@@ -10,6 +10,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pe.edu.tecsup.tienda.dtos.CategoriaDto;
 import pe.edu.tecsup.tienda.dtos.ProductoDto;
+import pe.edu.tecsup.tienda.entities.Categoria;
+import pe.edu.tecsup.tienda.entities.Producto;
 import pe.edu.tecsup.tienda.services.CategoriaService;
 import pe.edu.tecsup.tienda.services.ProductoService;
 
@@ -101,6 +103,36 @@ public class ProductoController {
         this.productoService.save(producto);
 
         return "redirect:/productos";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Long id, Model model) throws Exception {
+
+        log.info("edit edit(id: " + id + ")");
+
+        List<CategoriaDto> categorias = categoriaService.findAll();
+        model.addAttribute("categorias", categorias);
+
+        ProductoDto producto = productoService.findById(id);
+        model.addAttribute("producto", producto);
+
+        return "productos/edit";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute("producto") ProductoDto producto,
+                         Errors errors,
+                         @RequestParam("file") MultipartFile file,
+                         RedirectAttributes redirectAttrs) throws Exception{
+
+        log.info("call update(producto: " + producto + ")");
+
+        this.productoService.save(producto);
+
+        redirectAttrs.addFlashAttribute("message", "Registro actualizado correctamente");
+
+        return "redirect:/productos";
+
     }
 
 
