@@ -15,7 +15,7 @@ public class ProductoMapper {
             .stock(entity.getStock())
             .estado(entity.getEstado())
             .creado(entity.getCreado())
-            .categoriaDto(CategoriaMapper.toDto(entity.getCategoria()))
+            .categoria(CategoriaMapper.toDto(entity.getCategoria()))
             .build();
     }
 
@@ -29,7 +29,7 @@ public class ProductoMapper {
         entity.setStock(dto.getStock());
         entity.setEstado(dto.getEstado());
         entity.setCreado(dto.getCreado());
-        entity.setCategoria(CategoriaMapper.toEntity(dto.getCategoriaDto()));
+        entity.setCategoria(CategoriaMapper.toEntity(dto.getCategoria()));
 
         return entity;
     }

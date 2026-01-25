@@ -96,7 +96,7 @@ class ProductoServiceTest {
             var categoriaDto = this.categoriaService.findById(1L);
 
             var productoDto = ProductoDto.builder()
-                    .categoriaDto(categoriaDto) // Categoria de procesadores
+                    .categoria(categoriaDto) // Categoria de procesadores
                     .nombre("GTX-5070")
                     .descripcion("GPU para gaming de alta gama")
                     .precio(1500.00)
