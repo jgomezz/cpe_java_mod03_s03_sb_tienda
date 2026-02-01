@@ -23,6 +23,8 @@ import java.util.List;
 @EnableWebSecurity
 public class SpringSecurityConfig {
 
+    // Autenticacion
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(); // Algoritmo BCrypt
