@@ -26,7 +26,7 @@
             Tienda Online
         </a>
         <button class="navbar-toggler" type="button"
-                data-toggle="collapse" data-target="#navbarSupportedContent"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,14 +40,12 @@
                     <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item dropdown" sec:authorize="hasAnyAuthority('Administrador')">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Mantenimiento</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{/categorias}">Categorías</a>
-                        <a class="dropdown-item" th:href="@{/productos}">Productos</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Reportes</a>
-
-                    </div>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-bs-toggle="dropdown">Mantenimiento</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/categorias}">Categorías</a></li>
+                        <li><a class="dropdown-item" th:href="@{/productos}">Productos</a></li>
+                        <li><a class="dropdown-item" href="#">Reportes</a></li>
+                    </ul>
 
                 </li>
             </ul>
@@ -83,9 +81,8 @@
     </div>
 
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
 </body>
 </html>
